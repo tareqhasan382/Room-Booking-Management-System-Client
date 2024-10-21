@@ -1,8 +1,55 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import { BASEURL } from "@/app/page";
+import { useRouter } from "next/navigation";
+import { useAuth } from "@/Hooks/AuthProvider";
+// import useAuth from "@/Hooks/useAuth";
 const SignIn = () => {
+  const { login, token } = useAuth();
+  const router = useRouter();
+  useEffect(() => {
+    if (token) {
+      router.push("/");
+      return;
+    }
+  }, [token, router]);
+  const [state, setState] = useState({
+    email: "",
+    password: "",
+  });
+  const inputHandle = (e) => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch(`${BASEURL}/user/sign-in`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(state),
+      });
+      const data = await res.json();
+      // console.log("response:", data);
+      if (data.success) {
+        login(data.token, data.data);
+        // localStorage.setItem("token", data.token);
+        // localStorage.setItem("user", data.data);
+        window.alert("Sign in successfully!");
+        router.push("/");
+      }
+    } catch (error) {
+      // console.error("Error during login:", error);
+      window.alert(`Error during login ${error}`);
+    }
+  };
   return (
     <div className=" w-full h-full flex items-start justify-center md:pt-20 ">
       {/* iPhone 6-8 landscape · width: 667px */}
@@ -22,15 +69,21 @@ const SignIn = () => {
           <h1 className=" capitalize w-full text-center py-10 text-3xl font-bold ">
             Please login
           </h1>
-          <form className=" flex flex-col gap-4 ">
+          <form onSubmit={handleSubmit} className=" flex flex-col gap-4 ">
             <input
               type="email"
+              name="email"
+              value={state.email}
+              onChange={inputHandle}
               placeholder="email *"
               className=" w-full p-2 outline outline-black rounded "
               required
             />
             <input
               type="password"
+              name="password"
+              value={state.password}
+              onChange={inputHandle}
               placeholder="password *"
               className=" w-full p-2 outline outline-black rounded "
               required
