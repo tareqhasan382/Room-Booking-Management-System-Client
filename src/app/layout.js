@@ -37,7 +37,8 @@ export default function RootLayout({ children }) {
           </div>
 
           {/* Footer */}
-          <div className="w-full lg:px-24 px-2 bg-white dark:bg-gray-900 dark:text-white text-black">
+          <div className="w-full lg:px-24 px-2 bg-white dark:bg-gray-900 dark:text-white text-black ">
+            <div className=" w-full h-[2px] bg-slate-400  mt-5"></div>
             <Footer />
           </div>
         </div>

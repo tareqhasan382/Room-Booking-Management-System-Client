@@ -11,7 +11,13 @@ const Footer = () => {
       <div className=")] w-full pt-8 px-4 md:px-6 flex flex-col md:flex-row justify-between md:justify-around gap-8">
         {/* Footer Section */}
         <div className="flex flex-col items-center md:items-start justify-center gap-4 text-center md:text-left">
-          <Image width={300} height={300} alt="Logo" src={logo} />
+          <Image
+            width={300}
+            height={300}
+            alt="Logo"
+            src={logo}
+            className=" w-[160px] h-[50px] "
+          />
           {/* className="w-[150px] md:w-[200px] h-16 object-cover px-1 " */}
           <p className="text-sm md:text-base">
             We are here to share our skills, techniques
@@ -35,7 +41,7 @@ const Footer = () => {
 
         {/* Policy Section */}
         <div className=" flex flex-col items-center md:items-start gap-4 text-center md:text-left">
-          <p className="text-[#00B5E2] font-bold text-lg md:text-2xl">Policy</p>
+          <p className=" font-bold text-lg md:text-2xl">Policy</p>
           <h4 className="text-sm md:text-base">About Us</h4>
           <h4 className="text-sm md:text-base">Refund Policy</h4>
           <h4 className="text-sm md:text-base">Terms and Condition</h4>
@@ -44,9 +50,7 @@ const Footer = () => {
 
         {/* Quick Links Section */}
         <div className=" flex flex-col items-center md:items-start gap-4 text-center md:text-left">
-          <p className="text-[#00B5E2] font-bold text-lg md:text-2xl">
-            Quick Links
-          </p>
+          <p className=" font-bold text-lg md:text-2xl">Quick Links</p>
           <h4 className="text-sm md:text-base">Blogs</h4>
           <h4 className="text-sm md:text-base">Free Live Class</h4>
           <h4 className="text-sm md:text-base">Upcoming Live Class</h4>
@@ -55,9 +59,7 @@ const Footer = () => {
 
         {/* Contact Us Section */}
         <div className=" flex flex-col items-center md:items-start gap-4 text-center ">
-          <p className="text-[#00B5E2] font-bold text-lg md:text-2xl">
-            Contact Us
-          </p>
+          <p className=" font-bold text-lg md:text-2xl">Contact Us</p>
           <div className="flex flex-col gap-4">
             {/* Phone Number */}
             <div className=" flex items-center  gap-2 text-sm md:text-base">
