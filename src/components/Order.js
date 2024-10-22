@@ -72,19 +72,19 @@ const Order = () => {
                 <tr key={order._id} className="text-center">
                   <td className="border border-gray-200 p-2">{order._id}</td>
                   <td className="border border-gray-200 p-2">
-                    {order.userId.name}
+                    {order?.userId?.name}
                   </td>
                   <td className="border border-gray-200 p-2">
-                    {order.roomId.title}
+                    {order?.roomId?.title}
                   </td>
                   <td className="border border-gray-200 p-2">
-                    $ {order.roomId.rent}
+                    $ {order?.roomId?.rent}
                   </td>
                   <td className="border border-gray-200 p-2">
-                    {new Date(order.createdAt).toLocaleDateString()}
+                    {new Date(order?.createdAt).toLocaleDateString()}
                   </td>
                   <td className="border border-gray-200 p-2">
-                    {new Date(order.updatedAt).toLocaleDateString()}
+                    {new Date(order?.updatedAt).toLocaleDateString()}
                   </td>
                 </tr>
               ))}

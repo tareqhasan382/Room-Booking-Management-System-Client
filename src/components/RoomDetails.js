@@ -96,7 +96,7 @@ const RoomDetails = ({ roomId }) => {
             <Image
               width={400}
               height={400}
-              src="https://cache.marriott.com/marriottassets/marriott/LASJW/lasjw-suite-0084-hor-clsc.jpg?interpolation=progressive-bilinear&"
+              src={data?.data?.picture}
               alt={data?.data?.title}
               className="w-full h-full object-cover"
               priority

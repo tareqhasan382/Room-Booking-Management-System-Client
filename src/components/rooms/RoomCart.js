@@ -8,7 +8,7 @@ const RoomCart = ({ data }) => {
       <Image
         width={400}
         height={400}
-        src="https://cache.marriott.com/marriottassets/marriott/LASJW/lasjw-suite-0084-hor-clsc.jpg?interpolation=progressive-bilinear&"
+        src={picture}
         alt={title}
         className="w-full rounded-t h-[60%] object-cover"
       />
