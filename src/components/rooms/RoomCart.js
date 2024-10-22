@@ -15,7 +15,7 @@ const RoomCart = ({ data }) => {
       <div className="p-4">
         <h2 className="text-lg font-bold mb-1 ">{title}</h2>
         <p className="text-sm text-gray-700 dark:text-white mb-2 font-medium ">
-          Rent: ${rent} per hour
+          Rent: ${rent} per day
         </p>
         <p className="text-sm text-gray-700 dark:text-white font-medium ">
           Facility:
