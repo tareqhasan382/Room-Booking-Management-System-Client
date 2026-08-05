@@ -1,51 +1,62 @@
-// AuthProvider.js
 "use client";
 import { createContext, useContext, useState, useEffect } from "react";
 
-// Create the AuthContext
-const AuthContext = createContext();
+const AuthContext = createContext(null);
+
+const STORAGE_KEYS = {
+  token: "token",
+  user: "user",
+};
 
 export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(null);
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  // Function to store token and user information
+  useEffect(() => {
+    try {
+      const savedToken = localStorage.getItem(STORAGE_KEYS.token);
+      const savedUser = localStorage.getItem(STORAGE_KEYS.user);
+      if (savedToken) setToken(savedToken);
+      if (savedUser) setUser(JSON.parse(savedUser));
+    } catch {
+      setToken(null);
+      setUser(null);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
   const login = (authToken, userData) => {
-    localStorage.setItem("token", authToken);
-    localStorage.setItem("user", JSON.stringify(userData));
+    localStorage.setItem(STORAGE_KEYS.token, authToken);
+    localStorage.setItem(STORAGE_KEYS.user, JSON.stringify(userData));
     setToken(authToken);
     setUser(userData);
   };
 
-  // Function to clear token and user information
   const logout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
+    localStorage.removeItem(STORAGE_KEYS.token);
+    localStorage.removeItem(STORAGE_KEYS.user);
     setToken(null);
     setUser(null);
   };
 
-  useEffect(() => {
-    // Retrieve token and user data from local storage
-    const savedToken = localStorage.getItem("token");
-    const savedUser = localStorage.getItem("user");
-
-    if (savedToken) {
-      setToken(savedToken);
-    }
-    if (savedUser) {
-      setUser(JSON.parse(savedUser));
-    }
-  }, []);
+  const updateUser = (userData) => {
+    localStorage.setItem(STORAGE_KEYS.user, JSON.stringify(userData));
+    setUser(userData);
+  };
 
   return (
-    <AuthContext.Provider value={{ token, user, login, logout }}>
+    <AuthContext.Provider
+      value={{ token, user, loading, login, logout, updateUser }}
+    >
       {children}
     </AuthContext.Provider>
   );
 };
 
-// Custom hook to use the AuthContext
 export const useAuth = () => {
-  return useContext(AuthContext);
+  const ctx = useContext(AuthContext);
+  if (!ctx) throw new Error("useAuth must be used within AuthProvider");
+  return ctx;
 };
