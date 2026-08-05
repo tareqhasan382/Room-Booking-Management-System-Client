@@ -132,7 +132,7 @@ const Rooms = () => {
       )}
 
       {!isLoading && !error && rooms.length > 0 && (
-        <div className="w-full h-auto grid lg:grid-cols-3 md:grid-cols-2 xs:grid-cols-1 landscape:grid-cols-2 gap-6 py-5">
+        <div className="w-full h-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-5">
           {rooms.map((room) => (
             <Link key={room._id} href={`room/${room._id}`}>
               <RoomCart data={room} />

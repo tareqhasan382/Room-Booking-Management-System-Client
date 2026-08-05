@@ -35,7 +35,7 @@ const Navbar = () => {
   return (
     <nav className="relative min-w-full h-full lg:px-24 px-2 flex items-center justify-between shadow-sm shadow-[#69b2c5]/30 bg-white dark:bg-gray-900 dark:text-white text-black">
       <span className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-sky-400 via-cyan-400 to-amber-400" />
-      <div className="w-[200px] h-[80px] py-2 flex items-center">
+      <div className="w-[170px] sm:w-[200px] h-[80px] py-2 flex items-center shrink-0">
         <Link href="/" className="text-3xl font-bold flex items-center">
           <Logo className="h-[58px] w-auto" />
         </Link>
