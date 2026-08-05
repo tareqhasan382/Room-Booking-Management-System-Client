@@ -109,8 +109,8 @@ const SignUp = () => {
         </div>
 
         {/* Form panel */}
-        <div className="p-8 md:p-10 flex flex-col justify-center">
-          <span className="inline-flex md:hidden items-center gap-2 px-3 py-1.5 rounded-full bg-sky-500/10 text-sky-600 dark:text-sky-300 text-xs font-bold mb-6 self-start">
+        <div className="p-5 md:p-10 flex flex-col justify-center">
+          <span className="inline-flex md:hidden items-center gap-2 px-3 py-1.5 rounded-full bg-sky-500/10 text-sky-600 dark:text-sky-300 text-xs font-bold mb-4 self-start">
             <Hotel className="w-3.5 h-3.5" /> Room Booking
           </span>
 
@@ -121,7 +121,7 @@ const SignUp = () => {
             It takes less than a minute.
           </p>
 
-          <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-4">
+          <form onSubmit={handleSubmit} className="mt-5 flex flex-col gap-4">
             <div className="relative">
               <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
@@ -203,7 +203,7 @@ const SignUp = () => {
             </button>
           </form>
 
-          <div className="mt-6 text-center text-sm text-gray-500 dark:text-gray-400">
+          <div className="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">
             Already have an account?{" "}
             <Link
               href="/sign-in"

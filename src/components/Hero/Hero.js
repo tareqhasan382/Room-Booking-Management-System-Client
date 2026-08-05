@@ -38,8 +38,8 @@ const Hero = () => {
     <section className="w-full relative overflow-hidden">
       {/* decorative background */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-sky-50 via-white to-amber-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900" />
-      <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-sky-200/40 dark:bg-sky-900/20 blur-3xl" />
-      <div className="absolute -bottom-32 -left-24 w-96 h-96 rounded-full bg-amber-200/40 dark:bg-amber-900/10 blur-3xl" />
+      <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-sky-200/40 dark:bg-sky-900/20 blur-3xl -z-10" />
+      <div className="absolute -bottom-32 -left-24 w-96 h-96 rounded-full bg-amber-200/40 dark:bg-amber-900/10 blur-3xl -z-10" />
 
       <div className="flex flex-col lg:flex-row items-center gap-12 w-full py-14">
         <div className="lg:w-1/2">
