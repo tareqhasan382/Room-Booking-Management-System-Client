@@ -104,8 +104,8 @@ const SignIn = () => {
         </div>
 
         {/* Form panel */}
-        <div className="p-8 md:p-10 flex flex-col justify-center">
-          <span className="inline-flex md:hidden items-center gap-2 px-3 py-1.5 rounded-full bg-sky-500/10 text-sky-600 dark:text-sky-300 text-xs font-bold mb-6 self-start">
+        <div className="p-5 md:p-10 flex flex-col justify-center">
+          <span className="inline-flex md:hidden items-center gap-2 px-3 py-1.5 rounded-full bg-sky-500/10 text-sky-600 dark:text-sky-300 text-xs font-bold mb-4 self-start">
             <Hotel className="w-3.5 h-3.5" /> Room Booking
           </span>
 
@@ -117,7 +117,7 @@ const SignIn = () => {
           </p>
 
           {/* Demo credentials */}
-          <div className="mt-6 mb-6 flex flex-col gap-2">
+          <div className="mt-4 mb-4 flex flex-col gap-2">
             <p className="text-xs text-gray-500 dark:text-gray-400 font-medium">
               Try a demo account:
             </p>
@@ -187,7 +187,7 @@ const SignIn = () => {
             </button>
           </form>
 
-          <div className="mt-6 text-center text-sm text-gray-500 dark:text-gray-400">
+          <div className="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">
             Don&apos;t have an account?{" "}
             <Link
               href="/sign-up"
@@ -197,7 +197,7 @@ const SignIn = () => {
             </Link>
           </div>
 
-          <div className="mt-6 flex items-center justify-center gap-1.5 text-xs text-gray-400 dark:text-gray-500">
+          <div className="mt-4 flex items-center justify-center gap-1.5 text-xs text-gray-400 dark:text-gray-500">
             <KeyRound className="w-3.5 h-3.5" />
             Demo user: john@example.com / password123
           </div>
